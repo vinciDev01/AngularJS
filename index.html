@@ -3,23 +3,21 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>AngularJS : Formulaire et Affichage Dynamique</title>
+    <title>TP-AngularJS : ToDo</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
 
 <body ng-controller="MainController">
     <div class="container">
-        <h1>Ajouter et Afficher des Données</h1>
+        <h1>Ajouter et Afficher les ToDo</h1>
 
-        <!-- Formulaire pour entrer des données -->
         <form ng-submit="addData()">
             <input type="text" ng-model="newItem" placeholder="Entrez un élément" required />
             <button type="submit">Ajouter</button>
         </form>
 
-        <!-- Animation (toggle effect) -->
-        <button ng-click="toggleData()">Afficher / Cacher les données</button>
+        <button ng-click="toggleData()">Afficher / Cacher vos ToDo</button>
 
         <div class="box" ng-if="showData && data.length > 0">
             <h3>Données :</h3>
@@ -28,9 +26,8 @@
             </ul>
         </div>
 
-        <!-- Message si la liste est vide -->
         <div ng-if="showData && data.length === 0">
-            <p>Aucune donnée disponible.</p>
+            <p>Aucune ToDo</p>
         </div>
     </div>
 
