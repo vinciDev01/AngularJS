@@ -13,25 +13,25 @@ app.controller("MainController", function ($scope) {
     $scope.showData = !$scope.showData;
   };
 
-  // Fonction pour ajouter un nouvel élément et enregistrer dans localStorage
+  // Fonction pour ajouter une todo et enregistrer dans localStorage
   $scope.addData = function () {
     if ($scope.newItem.trim() !== "") {
-      $scope.data.push($scope.newItem); // Ajouter l'élément à la liste
-      $scope.newItem = ""; // Réinitialiser le champ
-      $scope.saveData(); // Enregistrer les données
+      $scope.data.push($scope.newItem);
+      $scope.newItem = ""; 
+      $scope.saveData();
     }
   };
 
-  // Fonction pour supprimer un élément
+  // Fonction pour supprimer une todo
   $scope.removeData = function (index) {
-    $scope.data.splice(index, 1); // Supprimer l'élément à l'index spécifié
+    $scope.data.splice(index, 1); 
     $scope.saveData(); // Enregistrer les données après la suppression
   };
 
-  // Fonction pour effacer toutes les tâches
+  // Fonction pour effacer toutes les todo
   $scope.clearAll = function () {
-    $scope.data = []; // Réinitialiser le tableau des tâches
-    $scope.saveData(); // Enregistrer les données (vide) dans localStorage
+    $scope.data = [];
+    $scope.saveData();
   };
 
   // Fonction pour enregistrer les données dans localStorage
