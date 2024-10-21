@@ -22,8 +22,12 @@
         <div class="box" ng-if="showData && data.length > 0">
             <h3>Données :</h3>
             <ul>
-                <li ng-repeat="item in data track by $index">{{ item }}</li>
+                <li ng-repeat="item in data track by $index">
+                    {{ item }}
+                    <button ng-click="removeData($index)">Supprimer</button>
+                </li>
             </ul>
+            <button ng-click="clearAll()" class="red">Effacer tout</button>
         </div>
 
         <div ng-if="showData && data.length === 0">
@@ -31,8 +35,7 @@
         </div>
     </div>
 
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>

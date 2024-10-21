@@ -33,6 +33,10 @@ button[type="submit"] {
     background-color: #0275d8;
 }
 
+.red{
+    background-color: red;
+}
+
 .box {
     background-color: #fff;
     padding: 20px;
