@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AngularJS : Formulaire et Affichage Dynamique</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="MainController">
+    <div class="container">
+        <h1>Ajouter et Afficher des Données</h1>
+
+        <!-- Formulaire pour entrer des données -->
+        <form ng-submit="addData()">
+            <input type="text" ng-model="newItem" placeholder="Entrez un élément" required />
+            <button type="submit">Ajouter</button>
+        </form>
+
+        <!-- Animation (toggle effect) -->
+        <button ng-click="toggleData()">Afficher / Cacher les données</button>
+
+        <div class="box" ng-if="showData && data.length > 0">
+            <h3>Données :</h3>
+            <ul>
+                <li ng-repeat="item in data track by $index">{{ item }}</li>
+            </ul>
+        </div>
+
+        <!-- Message si la liste est vide -->
+        <div ng-if="showData && data.length === 0">
+            <p>Aucune donnée disponible.</p>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
